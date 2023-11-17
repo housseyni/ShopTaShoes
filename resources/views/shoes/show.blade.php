@@ -59,6 +59,11 @@
             <li class="mb-2">
                 <span class="font-bold">Prix:</span> {{ $shoe->price }}
             </li>
+
+            <li class="mb-2">
+                <span class="font-bold">Prroprietaire:</span> {{ $shoe->owner->name}}
+            </li>
+            
             
             
         </ul>
