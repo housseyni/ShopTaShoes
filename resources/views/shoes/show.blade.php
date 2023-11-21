@@ -61,13 +61,16 @@
             </li>
 
             <li class="mb-2">
-                <span class="font-bold">Prroprietaire:</span> {{ $shoe->owner->name}}
+                <span class="font-bold">Proprietaire:</span> {{ $shoe->owner->name}}
             </li>
             
             
             
         </ul>
     </div>
+    <a href="/shoes" class="text-green-500 text-sm ml-2">Retour à la page d'acceuil</a>
+
+
 
   
 @endsection
