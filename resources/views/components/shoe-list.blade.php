@@ -4,23 +4,25 @@
     <table class="min-w-full border border-gray-300">
         <thead>
             <tr class="bg-gray-100">
-                <th class="py-2 px-4 border-b text-left">ID</th>
-                <th class="py-2 px-4 border-b text-left">Nom</th>
-                <th class="py-2 px-4 border-b text-left">Marque</th>
-                <th class="py-2 px-4 border-b text-left">Taille</th>
-                <th class="py-2 px-4 border-b text-left">Couleur</th>
-                <th class="py-2 px-4 border-b text-left">Prix</th>
+                
+                <x-th >ID</x-th>
+                <x-th >Nom</x-th>
+                <x-th >Marque</x-th>
+                <x-th >Taille</x-th>
+                <x-th >Couleur</x-th>
+                <x-th >Prix</x-th>
             </tr>
         </thead>
         <tbody>
             @foreach (Auth::user()->shoes as $shoe)
                 <tr>
-                    <td class="py-2 px-4 border-b text-left">{{ $shoe->id }}</td>
-                    <td class="py-2 px-4 border-b text-left">{{ $shoe->nom }}</td>
-                    <td class="py-2 px-4 border-b text-left">{{ $shoe->marque }}</td>
-                    <td class="py-2 px-4 border-b text-left">{{ $shoe->taille }}</td>
-                    <td class="py-2 px-4 border-b text-left">{{ $shoe->couleur }}</td>
-                    <td class="py-2 px-4 border-b text-left">{{ $shoe->price }}</td>
+                    
+                    <x-td >{{ $shoe->id }}</x-td>
+                    <x-td >{{ $shoe->nom }}</x-td>
+                    <x-td >{{ $shoe->marque }}</x-td>
+                    <x-td >{{ $shoe->taille }}</x-td>
+                    <x-td >{{ $shoe->couleur }}</x-td>
+                    <x-td >{{ $shoe->price }}</x-td>
                 </tr>
             @endforeach
         </tbody>
