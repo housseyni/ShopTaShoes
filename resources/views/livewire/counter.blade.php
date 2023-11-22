@@ -17,8 +17,8 @@
     </div> --}} 
 
     <div>
-        <x-input wire:model="nom" type = "text" />
-        <x-input wire:model="marque" type ="text" />
+        <input wire:model="nom" type = "text" />
+        <input wire:model="marque" type ="text" />
         <x-button wire:click="add" >Ajouter</x-button>
         <table class="min-w-full border border-gray-300">
             <thead>
