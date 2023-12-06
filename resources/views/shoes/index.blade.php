@@ -1,3 +1,4 @@
+
 {{-- @extends('layout')
 
 @section('main')
@@ -88,7 +89,7 @@
 
 
 
-@extends('layout')
+{{-- @extends('layout')
 
 @section('main')
     <div class="max-w-4xl mx-auto mt-8">
@@ -136,4 +137,78 @@
             @endforeach
         </table>
     </div>
-@endsection
+@endsection --}}
+
+
+
+
+
+
+{{-- @extends('layout')
+
+@section('main')
+    <x-header/>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-3xl font-semibold mb-4">Bienvenue dans notre magasin de chaussures</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach ($shoes as $shoe)
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="/img/{{ $shoe->image_path }}" alt="{{ $shoe->nom }}" class="w-full h-24 object-contain mb-4">
+                    <h2 class="text-xl font-semibold mb-2">{{ $shoe->nom }}</h2>
+                    <p class="text-gray-700">{{ $shoe->marque }}</p>
+                    <p class="text-gray-800 font-semibold mt-2">{{ $shoe->price }} </p>
+
+                    
+                    <button type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-full">Ajouter au panier</button>
+                </div>
+            @endforeach
+        </div>
+    </div>
+@endsection --}}
+
+
+
+{{-- 
+@extends('layout')
+
+@section('main')
+    <x-header/>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-3xl font-semibold mb-4">Toutes nos chaussures</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach ($shoes as $shoe)
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="/img/{{ $shoe->image_path }}" alt="{{ $shoe->nom }}" class="w-full h-24 object-contain mb-4">
+                    <h2 class="text-xl font-semibold mb-2">{{ $shoe->nom }}</h2>
+                    <p class="text-gray-700">{{ $shoe->marque }}</p>
+                    <p class="text-gray-800 font-semibold mt-2">{{ $shoe->price }}€ </p>
+
+                    <!-- Ajout du formulaire pour ajouter au panier -->
+                    <form action="{{ route('panier.ajouter', $shoe->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-full">Ajouter au panier</button>
+                    </form>
+                </div>
+            @endforeach
+        </div>
+    </div>
+@endsection --}}
+
+
+
+{{-- @extends('layout')
+
+@section('main') --}}
+
+<x-guest-layout>
+<livewire:ajout-panier/>
+</x-guest-layout>
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Panier;
 
 class User extends Authenticatable
 {
@@ -63,5 +64,10 @@ class User extends Authenticatable
     public function shoes()
     {
         return $this->hasMany(Shoe::class);
+    }
+
+    public function paniers()
+    {
+        return $this->belongsTo(Panier::class, 'user_id')->withPivot('quantite');
     }
 }

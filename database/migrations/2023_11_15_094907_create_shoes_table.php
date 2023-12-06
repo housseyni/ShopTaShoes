@@ -20,6 +20,7 @@ return new class extends Migration
             $table->float('price');
             $table->string('image_path')->nullable();
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('categorie_id')->constrained();
 
             $table->timestamps();
         });
