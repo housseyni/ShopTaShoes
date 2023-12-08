@@ -57,13 +57,13 @@ class AjoutPanier extends Component
             ]);
         } else {
             // Créer un nouveau panier si aucun n'existe avec la même combinaison
-            // $panier = new Panier([
-            //     'user_id' => $user_id,
-            //     'shoe_id' => $shoeId,
-            //     'quantity' => 1,
-            // ]);
+            $panier = new Panier([
+                'user_id' => $user_id,
+                'shoe_id' => $shoeId,
+                'quantity' => 1,
+            ]);
 
-            // $panier->save();
+            $panier->save();
         }
     }
     public function render()

@@ -83,9 +83,9 @@ class PanierController extends Controller
         $paniers = Panier::where('user_id', auth()->user()->id)->get();
 
         // Vérifiez si au moins un panier existe avant de passer à la vue
-        if ($paniers->isEmpty()) {
-            return redirect()->route('panier.index')->with('error', 'Panier introuvable.');
-        }
+        // if ($paniers->isEmpty()) {
+        //     return redirect()->route('panier.index')->with('error', 'Panier introuvable.');
+        // }
 
         // Vérifiez si chaque panier a une chaussure associée
         foreach ($paniers as $panier) {
