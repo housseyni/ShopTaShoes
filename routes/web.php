@@ -23,6 +23,9 @@ Route::get('/', function () {
 });
 
 
+
+
+
 Route::resource('shoes', ShoeController::class);
 
 
