@@ -23,7 +23,24 @@ Route::get('/', function () {
 });
 
 
-Route::resource('shoes', ShoeController::class);
+Route::get('/shoes', [ShoeController::class, 'index'])->name('shoe.index');
+
+Route::get('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoe.show');
+
+Route::get('/shoes/create', [ShoeController::class, 'create'])->name('shoe.create');
+
+Route::get('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoe.show');
+
+Route::get('/shoes/{shoe}/edit', [ShoeController::class, 'edit'])->name('shoe.edit');
+
+Route::post('/shoes}', [ShoeController::class, 'show'])->name('shoe.store');
+
+Route::patch('/shoes', [ShoeController::class, 'show'])->name('shoe.update');
+
+Route::delete('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoe.destroy');
+
+
+// Route::resource('shoes', ShoeController::class);
 
 
 
