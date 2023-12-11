@@ -1,14 +1,14 @@
-# Projet BTS SIO - [Nom du Projet]
+# Projet BTS SIO - [Shoe Shop]
 
 ## Description
 
-Ce projet a été créé à des fins éducatives dans le cadre de l'épreuve du BTS SIO. [Nom du Projet] vise à [brève description du but du projet].
+Ce projet a été créé à des fins éducatives dans le cadre de l'épreuve du BTS SIO. Shoe Shop est un site de vente de chaussures.
 
 ## Installation
 
 1. Clonez le dépôt sur votre machine :
 2. 
-   git clone [lien du dépôt]
+   git clone https://github.com/housseyni/shoes2git.git
 
     Installez les dépendances PHP avec Composer :
 
