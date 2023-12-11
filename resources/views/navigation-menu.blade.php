@@ -10,26 +10,14 @@
                     </a>
                 </div>
 
-                
-
-             
-
-
-
-                
-                <div class="flex space-x-8 items-center sm:ms-10">
+                <!-- Navigation Links -->
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('dashboard') }}
                     </x-nav-link>
-               
-                </div>
-
-            </div>
-                
                     <x-nav-link href="{{ route('shoe.index') }}" :active="request()->routeIs('shoe.index')">
-                        {{ __('Accueil') }}
+                        {{ __('Acceuil') }}
                     </x-nav-link>
-
 
                     <x-nav-link href="{{ route('panier.index') }}" :active="request()->routeIs('panier.index')">
                         <img src="/img/logo_navbar/panier.png" alt="..." class="w-12 h-auto object-contain mb-8" />

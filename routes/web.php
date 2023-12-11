@@ -23,10 +23,6 @@ Route::get('/', function () {
 });
 
 
-
-
-
-
 Route::get('/shoes', [ShoeController::class, 'index'])->name('shoe.index');
 
 Route::get('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoe.show');
