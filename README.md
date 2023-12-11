@@ -30,7 +30,7 @@ Ce projet utilise deux branches principales :
 # État du Projet
 
 Le projet est actuellement en cours de développement et est estimé à environ 50% de complétion.
-Contributions
+
 
 # Les contributions au projet sont les bienvenues. Si vous souhaitez contribuer, veuillez suivre ces étapes :
 
