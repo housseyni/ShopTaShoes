@@ -13,6 +13,7 @@ class AjoutPanier extends Component
     public $tri;  // Tri par défaut par le nom
     public $ordre = 'asc';  // Ordre par défaut ascendant
     public $filtre = '';
+    public $count = 0;
 
 
 
@@ -65,7 +66,12 @@ class AjoutPanier extends Component
 
             $panier->save();
         }
+
+        $this->count++;
     }
+
+
+
     public function render()
     {
         if ($this->tri == 'price') {
@@ -78,6 +84,8 @@ class AjoutPanier extends Component
             $shoes = Shoe::orderBy('nom', 'asc')->get();
             $this->shoes = $shoes;
         }
+
+
 
 
         return view('livewire.ajout-panier');

@@ -25,19 +25,19 @@ Route::get('/', function () {
 
 Route::get('/shoes', [ShoeController::class, 'index'])->name('shoe.index');
 
-Route::get('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoe.show');
+Route::get('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoes.show');
 
-Route::get('/shoes/create', [ShoeController::class, 'create'])->name('shoe.create');
+Route::get('/shoes/create', [ShoeController::class, 'create'])->name('shoes.create');
 
-Route::get('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoe.show');
+Route::get('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoes.show');
 
-Route::get('/shoes/{shoe}/edit', [ShoeController::class, 'edit'])->name('shoe.edit');
+Route::get('/shoes/{shoe}/edit', [ShoeController::class, 'edit'])->name('shoes.edit');
 
-Route::post('/shoes}', [ShoeController::class, 'show'])->name('shoe.store');
+Route::post('/shoes}', [ShoeController::class, 'show'])->name('shoes.store');
 
-Route::patch('/shoes', [ShoeController::class, 'show'])->name('shoe.update');
+Route::patch('/shoes', [ShoeController::class, 'show'])->name('shoes.update');
 
-Route::delete('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoe.destroy');
+Route::delete('/shoes/{shoe}', [ShoeController::class, 'show'])->name('shoes.destroy');
 
 
 // Route::resource('shoes', ShoeController::class);
