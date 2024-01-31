@@ -82,9 +82,9 @@
 
 <!-- Formulaire de suppression -->
 <form action="{{ route('panier.supprimer', ['id' => $panier->id]) }}" method="POST">
-    @csrf
-    @method('DELETE')
-    <button type="submit">Supprimer</button>
+  @csrf
+  @method('DELETE')
+  <button type="submit">Supprimer</button>
 </form>
 </li>
 @endforeach
@@ -114,9 +114,9 @@
 
 <!-- Formulaire de suppression -->
 <form action="{{ route('panier.supprimer', ['id' => $panier->id]) }}" method="POST">
-    @csrf
-    @method('DELETE')
-    <button type="submit">Supprimer</button>
+  @csrf
+  @method('DELETE')
+  <button type="submit">Supprimer</button>
 </form>
 
 <!-- Lien vers le détail du panier -->
@@ -151,74 +151,76 @@
                     <div class="flex justify-between items-center">
                         <div>
                             <p class="text-lg font-semibold">{{ $panier->shoe->nom }}</p>
-                            <p>{{ $panier->quantity }} pièces à {{ $panier->shoe->price }} € chacune</p>
-                        </div>
+<p>{{ $panier->quantity }} pièces à {{ $panier->shoe->price }} € chacune</p>
+</div>
 
-                        <!-- Formulaire de suppression -->
-                        <form action="{{ route('panier.supprimer', ['id' => $panier->id]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="text-red-500 hover:underline">Supprimer</button>
-                        </form>
-                    </div>
+<!-- Formulaire de suppression -->
+<form action="{{ route('panier.supprimer', ['id' => $panier->id]) }}" method="POST">
+  @csrf
+  @method('DELETE')
+  <button type="submit" class="text-red-500 hover:underline">Supprimer</button>
+</form>
+</div>
 
 
 
-                </li>
-                @endforeach
-            </ul>
-            @else
-            <p class="text-lg">Aucun élément dans le panier.</p>
-            @endif
+</li>
+@endforeach
+</ul>
+@else
+<p class="text-lg">Aucun élément dans le panier.</p>
+@endif
 
-            <p class="text-xl mt-4">Total: {{ $total }}</p>
-        </div>
-    </x-slot>
+<p class="text-xl mt-4">Total: {{ $total }}</p>
+</div>
+</x-slot>
 </x-app-layout> --}}
 
 
 
 
 
-
 <x-app-layout>
-    <x-slot name="header">
-  
-      <div class="container mx-auto mt-8">
-        <h2 class="text-3xl font-semibold mb-4">Mon Panier</h2>
-  
-        @if (!empty($paniers))
-          <ul class="space-y-4">
-            @foreach ($paniers as $panier)
-              <li class="border bg-gray-200 p-4 rounded-md shadow-md">
-                <div class="flex justify-between items-center">
-                  <div>
-                    <p class="text-lg font-semibold">{{ $panier->shoe->nom }}</p>
-                    <p>{{ $panier->quantity }} pieces à {{ $panier->shoe->price }} €</p>
-                  </div>
-  
-                  <form action="{{ route('panier.supprimer', ['id' => $panier->id]) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="text-red-500 hover:underline">
-                      Supprimer
-                    </button>
-                  </form>
-                </div>
-  
-  
-              </li>
-            @endforeach
-          </ul>
-        @else
-          <p class="text-lg">No items in cart.</p>
-        @endif
-  
-        <p class="text-xl mt-4">Total: {{ $total }}</p>
-      </div>
-    </x-slot>
-  </x-app-layout>
-  
+  <x-slot name="header">
 
+    <div class="container mx-auto mt-8">
+      <h2 class="text-3xl font-semibold mb-4">Mon Panier</h2>
 
+      @if (!empty($paniers))
+      <ul class="space-y-4">
+        @foreach ($paniers as $panier)
+        <li class="border bg-gray-200 p-4 rounded-md shadow-md">
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-lg font-semibold">{{ $panier->shoe->nom }}</p>
+              <p>{{ $panier->quantity }} pieces à {{ $panier->shoe->price }} €</p>
+            </div>
 
+            <form action="{{ route('panier.supprimer', ['id' => $panier->id]) }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="text-red-500 hover:underline">
+                Supprimer
+              </button>
+            </form>
+          </div>
+        </li>
+        @endforeach
+      </ul>
+
+      <!-- Bouton de commande -->
+      <form action="{{ route('commande.create') }}" method="GET" class="mt-8">
+        @csrf
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Passer la commande
+        </button>
+      </form>
+
+      @else
+      <p class="text-lg">Aucun article dans le panier.</p>
+      @endif
+
+      <p class="text-xl mt-4">Total: {{ $total }}</p>
+    </div>
+  </x-slot>
+</x-app-layout>

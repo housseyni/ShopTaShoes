@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShoeController;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\CategorieController;
+use Illuminate\Http\Request;
+use App\Models\Commande;
+use App\Models\Panier;
 
 
 /*
@@ -62,6 +65,36 @@ Route::middleware([
 Route::get('/test-livewire', function () {
     return view('counter-container');
 });
+
+
+Route::get('/commande/create', function () {
+    return view('commande.create');
+})->name('commande.create');
+
+
+Route::get('/confirmation', function () {
+    return view('confirmation');
+})->name('confirmation');
+
+
+
+Route::post('/commande', function (Request $request) {
+    // Validation des données du formulaire ici
+
+    // Créer une nouvelle commande en utilisant les données soumises
+    $commande = new Commande();
+    $commande->nom = $request->input('nom');
+    $commande->prenom = $request->input('prenom');
+    $commande->adresse = $request->input('adresse');
+    $commande->numero_carte = $request->input('numero_carte');
+    // Ajoutez d'autres champs de votre modèle Commande si nécessaire
+    $commande->save();
+
+    Panier::truncate();
+
+    // Redirection vers la page de confirmation avec un message de succès
+    return redirect()->route('confirmation')->with('success', 'Commande passée avec succès !');
+})->name('commande.store');
 
 
 
