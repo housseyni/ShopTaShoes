@@ -51,8 +51,8 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        return view('shoes.index');
+    })->name('shoes.index');
 
     Route::get('/admin', function () {
         return view('admin/admin-panel');
