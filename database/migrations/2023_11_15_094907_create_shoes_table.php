@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('marque');
-            $table->float('taille');
+            // $table->float('taille');
             $table->string('couleur');
             $table->float('price');
             $table->string('image_path')->nullable();

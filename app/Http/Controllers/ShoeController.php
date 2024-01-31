@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Shoe;
+use App\Models\Taille;
 
 class ShoeController extends Controller
 {

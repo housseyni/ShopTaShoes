@@ -16,7 +16,7 @@ class Shoe extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    protected $fillable = ['nom', 'marque', 'taille', 'couleur', 'price', 'image_path', 'categorie_id'];
+    protected $fillable = ['nom', 'marque', 'couleur', 'price', 'image_path', 'categorie_id'];
 
     public function categorie()
     {
@@ -26,5 +26,10 @@ class Shoe extends Model
     function panier()
     {
         return $this->belongsToMany(Panier::class);
+    }
+
+    public function tailles()
+    {
+        return $this->belongsToMany(Taille::class, 'shoe_tailles');
     }
 }

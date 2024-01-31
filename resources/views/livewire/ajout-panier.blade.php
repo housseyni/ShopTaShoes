@@ -1,77 +1,57 @@
 <div>
-  
-    
     <x-app-layout>
-        <x-slot name="header" >
-          
-            <div class = "bg-gray-100">
+        <x-slot name="header">
+            <div class="max-w-xl mx-auto mt-8 bg-white p-8 rounded shadow-md">
 
-                <div class="flex justify-between mb-4 ">
-                    <div>
-                        <label for="tri">Trier par :</label>
-                        <select wire:model="tri" class="ml-2" id="tri">
-                            <option wire:click="trierParNom" value="nom">Nom</option>
-                            <option wire:click="trierParPrix" value="price">Prix</option>
+                <h1 class="text-2xl font-semibold mb-4">Détails de la chaussure</h1>
+
+                <div style="position: relative; display: inline-block;">
+
+                </div>
+                <img src="/img/{{ $shoe->image_path }}" alt="Image de chaussure" class="mb-4 rounded-lg">
+
+                <ul class="list-disc ml-4">
+                    <li class="mb-2">
+                        <span class="font-bold">ID:</span> {{ $shoe->id }}
+                    </li>
+                    <li class="mb-2">
+                        <span class="font-bold">Nom:</span> {{ $shoe->nom }}
+                    </li>
+                    <li class="mb-2">
+                        <span class="font-bold">Marque:</span> {{ $shoe->marque }}
+                    </li>
+
+                    <li class="mb-2">
+                        <span class="font-bold">Couleur:</span> {{ $shoe->couleur }}
+                    </li>
+                    <li class="mb-2">
+                        <span class="font-bold">Prix:</span> {{ $shoe->price }}
+                    </li>
+
+
+
+                    <form action="{{ route('panier.ajouter', $shoe->id) }}" method="POST">
+                        @csrf
+                        <label for="taille">Choisissez votre taille :</label>
+                        <select id="taille" name="taille">
+                            @foreach($shoe->tailles as $taille)
+                            <option value="{{ $taille->id }}">{{ $taille->taille }}</option>
+                            @endforeach
                         </select>
-                    </div>
-                </div>
 
-                <div class="container mx-auto mt-25">
-                    <h1 class="text-3xl font-semibold mb-4">Toute Nos Chaussures</h1>
-                    <div style="position: relative; display: inline-block;">
-                        <img src="/img/logo_navbar/panier.png" alt="..." class="w-12 h-auto object-contain mb-8" style="display: block;">
-                        <div style="position: absolute; top: 0; right: -10px; margin-top: -8px; background-color: red; color: white; padding: 4px 8px; border-radius: 50%;">
-                            {{$count}}
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                        @foreach ($shoes as $shoe)
-                        <div class="bg-gray-200 p-4 rounded-lg shadow w-full h-full">
-                            <img src="/img/{{ $shoe->image_path }}" alt="{{ $shoe->nom }}" class="w-full h-1/2 object-cover mb-8">
-                            {{-- <img src="/img/{{ $shoe->image_path }}" alt="{{ $shoe->nom }}" class="w-96 h-72 object-cover mb-8"> --}}
+                    </form>
 
-                            <!-- Adjusted height to maintain aspect ratio -->
+                    <form action="{{ route('panier.ajouter', $shoe->id) }}" method="POST">
+                        @csrf
+                        <button type="button" wire:click="ajouterAuPanier({{ $shoe->id }})" class="bg-red-500 text-white px-4 py-2 rounded-full mb-100">Ajouter au panier</button>
+                    </form>
 
-                            <h2 class="text-xl font-semibold mb-2">{{ $shoe->nom }}</h2>
-                            <p class="text-gray-700">{{ $shoe->marque }}</p>
-                            <p class="text-gray-800 font-semibold mt-2 mb-8">{{ $shoe->price }}€ </p>
+                </ul>
+            </div>
 
 
-
-                              <form action="{{ route('panier.ajouter', $shoe->id) }}" method="POST">
-                                    @csrf
-                                    <label for="taille">Choisissez votre taille :</label>
-                                    <select id="taille" name="taille">
-                                       <option value="{{ $shoe->taille }}" selected>{{ $shoe->taille }}</option>
-                                       
-                                    </select>
-                                    
-                                 </form>
-                                 
-
-                            <!-- Ajout du formulaire pour ajouter au panier -->
-                            
-                                <form action="{{ route('panier.ajouter', $shoe->id) }}" method="POST">
-                                    @csrf
-                                    {{-- <button type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-full">Ajouter au panier</button> --}}
-                                    <button type="button" wire:click="ajouterAuPanier({{ $shoe->id }})" class="bg-red-500 text-white px-4 py-2 rounded-full mb-100" >Ajouter au panier</button>
-                                </form>
-                                
-                              
-
-                                
-                            
-                        </div>
-                        @endforeach
-                       
-                    </div>
-                </div>
-            
+            <a href="/shoes" class="text-green-500 text-sm ml-2">Retour à la page d'acceuil</a>
         </x-slot>
     </x-app-layout>
-
-    
 
 </div>

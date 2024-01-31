@@ -6,46 +6,21 @@ use Livewire\Component;
 use App\Models\Panier;
 use App\Models\Shoe;
 
-
 class AjoutPanier extends Component
 {
-    public $shoes;
-    public $tri;  // Tri par défaut par le nom
-    public $ordre = 'asc';  // Ordre par défaut ascendant
-    public $filtre = '';
+
+
     public $count = 0;
+    public $shoe;
 
-
-
-
-
-
-    public function mount()
+    public function mount($shoeId)
     {
-        // $this->tri = 'nom';
-        $this->shoes = Shoe::all();
-        // $this->shoes = $this->getShoes();
+        // Récupérer les détails de la chaussure à partir de l'ID
+        $this->shoe = Shoe::findOrFail($shoeId);
     }
-
-
-
-
-    public function trierParPrix()
-    {
-
-        $this->tri = 'price';
-    }
-
-    public function trierParNom()
-    {
-
-        $this->tri = 'nom';
-    }
-
 
     public function ajouterAuPanier($shoeId)
     {
-
         $user_id = auth()->user()->id;
 
         // Vérifier si un panier existe déjà avec la même combinaison user_id et shoe_id
@@ -70,24 +45,8 @@ class AjoutPanier extends Component
         $this->count++;
     }
 
-
-
     public function render()
     {
-        if ($this->tri == 'price') {
-            $shoes = Shoe::orderBy('price', 'asc')->get();
-            $this->shoes = $shoes;
-        }
-
-
-        if ($this->tri == 'nom') {
-            $shoes = Shoe::orderBy('nom', 'asc')->get();
-            $this->shoes = $shoes;
-        }
-
-
-
-
         return view('livewire.ajout-panier');
     }
 }
