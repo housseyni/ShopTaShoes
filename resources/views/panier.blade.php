@@ -208,7 +208,10 @@
         @endforeach
       </ul>
 
+
+
       <!-- Bouton de commande -->
+      <p class="text-xl mt-4">Total: {{ $total }}€</p>
       <form action="{{ route('commande.create') }}" method="GET" class="mt-8">
         @csrf
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -220,7 +223,7 @@
       <p class="text-lg">Aucun article dans le panier.</p>
       @endif
 
-      <p class="text-xl mt-4">Total: {{ $total }}</p>
+      
     </div>
   </x-slot>
 </x-app-layout>

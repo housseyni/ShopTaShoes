@@ -6,6 +6,9 @@ use Livewire\Component;
 use App\Models\Panier;
 use App\Models\Shoe;
 
+use Illuminate\Http\Request;
+
+
 class AjoutPanier extends Component
 {
 
@@ -44,6 +47,9 @@ class AjoutPanier extends Component
 
         $this->count++;
     }
+
+
+
 
     public function render()
     {

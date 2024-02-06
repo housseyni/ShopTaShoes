@@ -79,6 +79,8 @@ Route::get('/confirmation', function () {
 
 
 Route::post('/commande', function (Request $request) {
+
+
     // Validation des données du formulaire ici
 
     // Créer une nouvelle commande en utilisant les données soumises

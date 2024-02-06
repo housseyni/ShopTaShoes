@@ -55,6 +55,8 @@ class ShoeSeeder extends Seeder
         $s->save();
 
 
+
+
         $s = new Shoe();
         $s->nom = "B22";
         $s->marque = "Dior";
@@ -120,7 +122,7 @@ class ShoeSeeder extends Seeder
 
 
         $s = new Shoe();
-        $s->nom = "Air Jordan 1 High Chicago Lost And Found";
+        $s->nom = "Air Jordan 1 High Chicago";
         $s->marque = "Air Jordan";
         // $s->taille = 43;
         $s->couleur = "Rouge et blanche";

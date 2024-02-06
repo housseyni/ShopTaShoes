@@ -51,6 +51,13 @@
 
 
             <a href="/shoes" class="text-green-500 text-sm ml-2">Retour à la page d'acceuil</a>
+            <div class="relative inline-block">
+                <img src="/img/logo_navbar/panier.png" alt="..." class="w-6 h-auto object-contain" />
+                <span class="absolute top-0 right-0 bg-red-500 text-white w-4 h-4 flex items-center justify-center rounded-full text-xs transform translate-x-1/2 -translate-y-1/2">{{$count}}</span>
+            </div>
+            
+            
+            
         </x-slot>
     </x-app-layout>
 

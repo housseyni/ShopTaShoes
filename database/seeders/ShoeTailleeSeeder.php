@@ -22,6 +22,7 @@ class ShoeTailleeSeeder extends Seeder
         foreach ($shoes as $shoe) {
             $randomTailles = $tailles->random(rand(1, count($tailles))); // Choisissez aléatoirement quelques tailles pour chaque chaussure
             $shoe->tailles()->attach($randomTailles);
+            
         }
     }
 }
