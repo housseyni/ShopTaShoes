@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Shoe;
+use App\Models\Taille;
 
 class Panier extends Model
 {
@@ -14,6 +15,7 @@ class Panier extends Model
     protected $fillable = [
         'user_id', // Ajoutez les autres champs si nécessaire
         'shoe_id',
+        'taille_id',
         'quantity'
 
     ];
@@ -28,5 +30,10 @@ class Panier extends Model
     public function shoe()
     {
         return $this->belongsTo(Shoe::class);
+    }
+
+    public function taille()
+    {
+        return $this->belongsTo(Taille::class);
     }
 }

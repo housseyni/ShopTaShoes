@@ -15,13 +15,15 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('shoe_id');
+            $table->unsignedBigInteger('taille_id');
             $table->integer('quantity')->default(1);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('shoe_id')->references('id')->on('shoes')->onDelete('cascade');
+            $table->foreign('taille_id')->references('id')->on('shoes')->onDelete('cascade');
 
-            $table->unique(['user_id', 'shoe_id']);
+            $table->unique(['user_id', 'shoe_id', 'taille_id']);
         });
     }
 

@@ -108,6 +108,6 @@ Route::get('/panier', [PanierController::class, 'afficherPanier'])->name('panier
 
 Route::delete('/panier/supprimer/{id}', [PanierController::class, 'supprimerDuPanier'])->name('panier.supprimer');
 
-Route::post('/panier/ajouter/{shoeId}', [PanierController::class, 'ajouterAuPanier'])->name('panier.ajouter');
+Route::post('/panier/ajouter/{id}', [PanierController::class, 'ajouterAuPanier'])->name('panier.ajouter');
 
-Route::get('/categories', [CategorieController::class, 'afficherCategories'])->name('categories.index');
+Route::patch('/panier', [PanierController::class, 'afficherPanier'])->name('shoes.update');
