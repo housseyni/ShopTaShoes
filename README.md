@@ -1,4 +1,4 @@
-# Projet BTS SIO - [Shoe Shop]
+# Projet BTS SIO - [ShopTaShoes]
 
 ## Description
 
@@ -7,18 +7,19 @@ Ce projet a été créé à des fins éducatives dans le cadre de l'épreuve du 
 ## Installation
 
 1. Clonez le dépôt sur votre machine :
-2. 
+```bash
    git clone https://github.com/housseyni/shoes2git.git
-
-    Installez les dépendances PHP avec Composer :
-
+```
+## Installez les dépendances PHP avec Composer :
+```bash
     composer install
-
+```
 # Installez Livewire, Tailwind CSS, Node.js, et Jetstream :
+```bash
     composer require livewire/livewire
     npm install && npm run dev
-
-    Configurez votre environnement (copiez le fichier .env.example en .env et configurez-le).
+```
+### - Configurez votre environnement (copiez le fichier .env.example en .env et configurez-le).
 
 # Branches
 
@@ -35,9 +36,9 @@ Le projet est actuellement en cours de développement et est estimé à environ 
 # Les contributions au projet sont les bienvenues. Si vous souhaitez contribuer, veuillez suivre ces étapes :
 
     Créez une branche à partir de la branche 'prog' pour vos modifications :
-
+```bash
     git checkout -b nom-de-votre-branche
-
+```
     Effectuez vos modifications et assurez-vous que le code fonctionne correctement.
 
 Soumettez une demande d'extraction (pull request) décrivant vos modifications.
